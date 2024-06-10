@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import SearchInput from "../components/search/SearchInput";
+import SearchResults from "../components/search/SearchResults";
 
 const SearchBooks = (props) => {
   return (
@@ -7,13 +9,9 @@ const SearchBooks = (props) => {
         <Link to="/">
           <span className="close-search">Close</span>
         </Link>
-        <div className="search-books-input-wrapper">
-          <input type="text" placeholder="Search by title, author, or ISBN" />
-        </div>
+        <SearchInput />
       </div>
-      <div className="search-books-results">
-        <ol className="books-grid"></ol>
-      </div>
+      <SearchResults />
     </div>
   );
 };
