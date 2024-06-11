@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Bookshelf from "../components/book/Bookshelf";
 
-const ListBooks = (props) => {
+const ListBooks = ({ books, bookshelves, onMove }) => {
   return (
     <div className="list-books">
       <div className="list-books-title">
@@ -9,9 +9,14 @@ const ListBooks = (props) => {
       </div>
       <div className="list-books-content">
         <div>
-          <Bookshelf />
-          <Bookshelf />
-          <Bookshelf />
+          {bookshelves.map((shelf) => (
+            <Bookshelf
+              key={shelf.id}
+              shelf={shelf}
+              books={books}
+              onMove={onMove}
+            />
+          ))}
         </div>
       </div>
       <div className="open-search">
