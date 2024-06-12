@@ -46,7 +46,7 @@ function App() {
             <ListBooks
               books={books}
               bookshelves={bookshelves}
-              onMove={onMoveBookHandler}
+              onMoveBook={onMoveBookHandler}
             />
           }
         />

@@ -1,6 +1,6 @@
 import Book from "./Book";
 
-const Bookshelf = ({ books, shelf, onMove }) => {
+const Bookshelf = ({ books, shelf, onMoveBook }) => {
   const booksOnShelf = books.filter((item) => item.shelf === shelf.id);
 
   return (
@@ -9,7 +9,12 @@ const Bookshelf = ({ books, shelf, onMove }) => {
       <div className="bookshelf-books">
         <ol className="books-grid">
           {booksOnShelf.map((item) => (
-            <Book key={item.id} book={item} shelf={shelf.id} onMove={onMove} />
+            <Book
+              key={item.id}
+              book={item}
+              shelf={shelf.id}
+              onMoveBook={onMoveBook}
+            />
           ))}
         </ol>
       </div>

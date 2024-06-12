@@ -1,8 +1,8 @@
 import BookshelfChanger from "./BookshelfChanger";
 
-const Book = ({ book, shelf, onMove }) => {
+const Book = ({ book, shelf, onMoveBook }) => {
   const onShelfChangeHandler = (value) => {
-    onMove(book, value);
+    onMoveBook(book, value);
   };
 
   return (
