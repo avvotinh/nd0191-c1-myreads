@@ -52,7 +52,7 @@ function App() {
         />
         <Route
           path="/search"
-          element={<SearchBooks books={books} onMove={onMoveBookHandler} />}
+          element={<SearchBooks books={books} onMoveBook={onMoveBookHandler} />}
         />
       </Routes>
     </div>
