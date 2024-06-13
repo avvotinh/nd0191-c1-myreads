@@ -1,6 +1,6 @@
 import Book from "../book/Book";
 
-const SearchResults = ({ books, onMoveBook }) => {
+const SearchResults = ({ books, onUpdateBookShelf }) => {
   return (
     <div className="search-books-results">
       <ol className="books-grid">
@@ -9,7 +9,7 @@ const SearchResults = ({ books, onMoveBook }) => {
             key={book.id}
             book={book}
             shelf={book.shelf ?? "none"}
-            onMoveBook={onMoveBook}
+            onUpdateBookShelf={onUpdateBookShelf}
           />
         ))}
       </ol>

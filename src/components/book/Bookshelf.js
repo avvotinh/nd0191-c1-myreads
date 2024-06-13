@@ -1,6 +1,6 @@
 import Book from "./Book";
 
-const Bookshelf = ({ books, shelf, onMoveBook }) => {
+const Bookshelf = ({ books, shelf, onUpdateBookShelf }) => {
   const booksOnShelf = books.filter((item) => item.shelf === shelf.id);
 
   return (
@@ -13,7 +13,7 @@ const Bookshelf = ({ books, shelf, onMoveBook }) => {
               key={item.id}
               book={item}
               shelf={shelf.id}
-              onMoveBook={onMoveBook}
+              onUpdateBookShelf={onUpdateBookShelf}
             />
           ))}
         </ol>

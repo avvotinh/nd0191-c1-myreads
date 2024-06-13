@@ -1,8 +1,8 @@
 import BookshelfChanger from "./BookshelfChanger";
 
-const Book = ({ book, shelf, onMoveBook }) => {
+const Book = ({ book, shelf, onUpdateBookShelf }) => {
   const onShelfChangeHandler = (value) => {
-    onMoveBook(book, value);
+    onUpdateBookShelf(book, value);
   };
 
   return (
@@ -14,7 +14,9 @@ const Book = ({ book, shelf, onMoveBook }) => {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${book.imageLinks.thumbnail})`,
+              backgroundImage: `url(${
+                book.imageLinks ? book.imageLinks.thumbnail : ""
+              })`,
             }}
           ></div>
           <BookshelfChanger

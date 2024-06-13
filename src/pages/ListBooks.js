@@ -1,7 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Bookshelf from "../components/book/Bookshelf";
+import { BooksContext } from "../context/BooksContext";
 
-const ListBooks = ({ books, bookshelves, onMove }) => {
+const bookshelves = [
+  { id: "currentlyReading", name: "Currently Reading" },
+  { id: "wantToRead", name: "Want to Read" },
+  { id: "read", name: "Read" },
+];
+
+const ListBooks = () => {
+  const { books, onUpdateBookShelf } = useContext(BooksContext);
+
   return (
     <div className="list-books">
       <div className="list-books-title">
@@ -14,7 +24,7 @@ const ListBooks = ({ books, bookshelves, onMove }) => {
               key={shelf.id}
               shelf={shelf}
               books={books}
-              onMove={onMove}
+              onUpdateBookShelf={onUpdateBookShelf}
             />
           ))}
         </div>
